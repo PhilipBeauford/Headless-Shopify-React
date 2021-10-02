@@ -3,10 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {ChakraProvider} from '@chakra-ui/react'
+import ShopProvider from './context/shopContext'
 
+//he eventually takes off react.strictmode
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ChakraProvider>
+      <ShopProvider>
+        <App />
+      </ShopProvider>
+    </ChakraProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
